@@ -7548,7 +7548,9 @@ class GitCommandManager {
             }
             args.push('origin');
             for (const arg of refSpec) {
-                args.push(arg);
+              if (arg !== refHelper.tagsRefSpec) {
+                args.push(arg)
+              }
             }
             const that = this;
             yield retryHelper.execute(() => __awaiter(this, void 0, void 0, function* () {
