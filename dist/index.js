@@ -7547,11 +7547,6 @@ class GitCommandManager {
                 args.push('--unshallow');
             }
             args.push('origin');
-            for (const arg of refSpec) {
-              if (arg !== refHelper.tagsRefSpec) {
-                args.push(arg)
-              }
-            }
             const that = this;
             yield retryHelper.execute(() => __awaiter(this, void 0, void 0, function* () {
                 yield that.execGit(args);

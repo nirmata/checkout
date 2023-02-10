@@ -219,11 +219,6 @@ class GitCommandManager {
     }
 
     args.push('origin')
-    for (const arg of refSpec) {
-      if (arg !== refHelper.tagsRefSpec) { 
-        args.push(arg)
-      }
-    }
 
     const that = this
     await retryHelper.execute(async () => {
